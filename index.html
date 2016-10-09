@@ -3,134 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Basic File</title>
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
 </head>
 <body>
 
 	
-
  	<p id= "game"> </p>
 
+ 	<div id="main-container" class="container">
+
+ 		<h1> HANGMAN </h1>
+
+ 		<h2> PRESS ANY KEY TO GET STARTED!</h1> <br> <br>
+
+ 		<h2> WINS </h2> <br> <br>
+
+ 		<h2> CURRENT WORD </h2> <br> <br>
+
+ 		<h2> NUMBER OF GUESSES REMAINING </h2> <br> <br>
+
+ 		<h2> LETTERS ALREADY GUESSED </h2> <br> <br>
+
+ 	</div>
 
 
-	<script type="text/javascript">
-
-	var numberGuesses = 15;
-	var lettersGuessedArray = new Array(15);
-
-	var wins = 0;
-	var optionsCurrentWord = ['galantis','tiesto','martin garrix'];
-	var blankCurrentWordArray_1st = new Array;
-	var  j = 0;
-
-// Captures Key Clicks
-	document.onkeyup = function(event) {
-
-		// Determines which exact key was selected. Make it lowercase
-		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
-		// Alerts with user guess
-		alert(userGuess);
-
-		// Create code to randomly choose one of the three bands (Computer) 
-		//var currentWord = optionsCurrentWord[Math.floor(Math.random()*optionsCurrentWord.length)];
-
-		var currentWord = optionsCurrentWord[0];
-
-	
-
-		// Finding out what current word is, then setting the blank world array to that length accordingly 
-
-		// if (currentWord === optionsCurrentWord[0])
-
-		// 	{
-		// 		var blankCurrentWordArray_1st = new Array(8);
-
-		// 	}
-
-		// else if (currentWord === optionsCurrentWord[1])
-
-		// 	{
-		// 		var blankCurrentWordArray_2nd = new Array(6);
-		// 	}
-
-		// else if (currentWord === optionsCurrentWord[2])
-
-		// 	{
-		// 		var blankCurrentWordArray_3rd = new Array(13);
-
-		// 	}
-
-
-			// if else blocks for each option selected
-
-	//	if (currentWord === optionsCurrentWord[0])
-
-		
-			// the loop to go through each character of the current word to see if the userGuess matched with the current word
-
-			for (var i=0; i<optionsCurrentWord[0].length;i++) 
-				{
-
-				if (optionsCurrentWord[0].charAt(i) === userGuess && blankCurrentWordArray_1st.length === optionsCurrentWord[0].length) 
-
-					{
-
-					 blankCurrentWordArray_1st[i] = userGuess;
-					 wins++;
-
-					// play song
-
-					break;
-
-					}
-
-				else if (optionsCurrentWord[0].charAt(i) === userGuess) 
-					{
-
-					 blankCurrentWordArray_1st[i] = userGuess;
-
-					} 
-
-
-				else if (optionsCurrentWord[0].charAt(i) !== userGuess) 
-
-					 {
-						//numberGuesses--;
-						lettersGuessedArray[j]=userGuess;
-						j++;
-				 	}
-
-
-
-
-				}
-
-
-
-				
-
-		
-					
-
-			
-
-		
-		console.log("Current Word " +currentWord);
-		console.log("User guessed " + userGuess);
-		console.log("Current Word Array " + blankCurrentWordArray_1st);
-		console.log("Number of Guesses remaining " + numberGuesses);
-		console.log("Letters Guessed Array " + lettersGuessedArray);
-		console.log("Wins " + wins);
-
-	document.querySelector('#game').innerHTML = '<h1> Current Word: '  + currentWord + '<br> User guessed: ' +  userGuess + '<br> </h1>';
-
-}
-
-
-
-
-
-
-	</script>
 </body>
 </html>
