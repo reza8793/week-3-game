@@ -7,9 +7,7 @@
 	var optionsCurrentWord = ['Galantis','Tiesto','Martin Garrix','The Chainsmokers',
 							'Armin Van Buuren', 'Kygo', 'Van She', 'Marshmello', 
 							'Axwell Ingrosso','Syn Cole'];
-	var blankCurrentWordArray_1st = new Array(8);
-
-	// blankCurrentWordArray_1st(8).fill("_ ");  
+	var blankCurrentWordArray_1st = new Array;
 
 	var  j = 0;
 
@@ -42,10 +40,24 @@
 
 				currentWord = currentWord.toLowerCase();
 
-				alert(currentWord.length);
+				//alert(currentWord.length);
 
 			 numberGuesses = (currentWord.length)+8;    // numberGuesses depends on the length of the word,
-			 											// user gets chances depending on the length of the current word
+			 		
+
+			for (var i=0; i<currentWord.length;i++) 
+			{
+
+				var blah = blankCurrentWordArray_1st.push("_ ");
+
+			}
+					
+
+			 alert(currentWord)	;						
+
+			 // user gets chances depending on the length of the current word
+
+			 
 
 			sameGameCurrentWord = currentWord; 
 
@@ -58,29 +70,53 @@
 		}
 
 
-		// function duplicateChar_counter(x) {
+		function duplicateChar_counter(x) {
+
+			counter = 0;  
 			
-		// 	for (var b = 0; b <x.length; b++){
+			for (var b = 0; b <x.length; b++){
 
-		// 		for (var c = b; b < x.length; c++)
+				for (var c = b+1; c < x.length; c++)
 
-		// 		{
+				{
 
-		// 			if ((x[i] === x[j]) && b!=c)
+					// if (x[b] === x[c] && x[b] != "") 
 
-		// 				counter++;
-		// 		}
-		// 	}
+					if (x[b] === x[c] && x[b] != '') 
 
-		// 	return counter;
+					{
 
-		// }
+						counter++;
+
+					}
+
+						
+				}
+			}
+
+			return counter;
+
+		}
 
 
 
 		
 
-		// Finding out what current word is, then setting the blank world array to that length accordingly 
+		// Finding out what current word is, then setting the audio file to specific band
+
+		// function audioPlay(x) {
+
+		 	// if (x == 'Tiesto' or x == 'tiesto' )
+
+		 	// {
+
+		 	// 	var audio = new Audio('virusRingtone.mp3');
+				// audio.play();
+		 	// }
+
+			
+
+		
 
 		// if (currentWord === optionsCurrentWord[0])
 
@@ -110,34 +146,40 @@
 		
 			// the loop to go through each character of the current word to see if the userGuess matched with the current word
 			
+			
+
+
+
 
 			for (var i=0; i<currentWord.length;i++) 
 				{ 	
-					// blankCurrentWordArray_1st = blankCurrentWordArray_1st.push('_ ');
+					
 					var duplicateChar = 0;
 
 				 if (currentWord.charAt(i) === userGuess) 
 
-					{
+						{
 
 								blankCurrentWordArray_1st[i] = userGuess;
 
 									w++;     // everytime user guesses a correct char, counacterter w
-					       		 		// gets updated, which will be used for winning criteria next,
+					    			   		 		// gets updated, which will be used for winning criteria next,
 
-					       		 	numberGuesses--; 
+					    			numberGuesses--; 
 
+
+					    		alert( "current blank word " + blankCurrentWordArray_1st );
 								
+					    		alert( "duplicate char counter " +(duplicateChar_counter(blankCurrentWordArray_1st)));
 
-
-								// if ((duplicateChar_counter(blankCurrentWordArray_1st)) == 0)  
+								// if ((duplicateChar_counter(blankCurrentWordArray_1st)) === 0)  
 
 								// {
 
-								// 	w++;     // everytime user guesses a correct char, counacterter w
-					   //     		 		// gets updated, which will be used for winning criteria next,
+								// 	w++;           // everytime user guesses a correct char that's not a duplicate, 
+								// 					//w gets updated, which will be used for winning criteria next
+					   // 	    	numberGuesses--;	// numberGuesses also decreases when it's not a duplicate char
 
-					   //     		 	numberGuesses--; 
 								// }
 
 
@@ -155,8 +197,26 @@
 							 if (w === currentWord.length)    // winning criteria
 						 	{
 
-						 	wins++; // if user guessed the whole word, wins will be updated
-						 	// play song
+						 		wins++; // if user guessed the whole word, wins will be updated
+						 		
+						 		// play song
+						 		// if (currentWord == 'Tiesto' || currentWord == 'tiesto' ||
+						 		// 	currentWord == 'Kygo' || currentWord == 'kygo' ||
+						 		// 	currentWord == 'Syn Cole ' || currentWord == 'Galantis'
+						 		// 	)
+
+								 // 	{
+
+								 // 		var audio = document.getElementById("martin_garrix_audio")
+									// 	audio.play();
+
+									// 	function pauseAudio()
+									// 	 {
+    					// 					audio.pause();
+									// 	 }
+								 // 	}
+
+
 						 	}
 
 					} 
@@ -205,13 +265,7 @@
 	'<br> <br>LETTERS ALREADY GUESSED : ' +  lettersGuessedArray +
 	'<br> <br>User guessed: ' +  userGuess + '<br>  <br></h1>';
 
-	// document.querySelector('#game').innerHTML = '<h2> Wins: '  + wins + '<br> 	CURRENT WORD: ' +  blankCurrentWordArray_1st + '<br>  <br></h2>';
-	// document.querySelector('#game').innerHTML = '<h2> Wins: '  + wins + '<br> CURRENT WORD: ' +  blankCurrentWordArray_1st + '<br> '
-	// NUMBER OF GUESSES REMAINING: '  + numberGuesses + '<br> 	LETTERS ALREADY GUESSED: ' +  lettersGuessedArray + '<br>  <br></h2>';
-
 	
-
-
 }
 
 
