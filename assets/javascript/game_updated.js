@@ -1,29 +1,33 @@
 
 
 						// number of guesses the player gets 
-	var lettersGuessedArray = new Array;		// empty array for the letters already guessed 
+	var lettersGuessedArray; 		// empty array for the letters already guessed 
 	var numberGuesses = 15;
 	var wins = 0;
 	var optionsCurrentWord = ['Galantis','Tiesto','Martin Garrix','The Chainsmokers',
 							'Armin Van Buuren', 'Kygo', 'Van She', 'Marshmello', 
 							'Axwell Ingrosso','Syn Cole'];  // wordbank 
 
-	var blankCurrentWordArray_1st = new Array;				// blank word array that will be filled with userguesses 
+	var blankCurrentWordArray_1st;				// blank word array that will be filled with userguesses 
 
 	
 // Captures Key Clicks
 
+	var currentWord;
 
 function gameStart() {
 
 		// if (numberGuesses === 15 || numberGuesses === 0 || wins === 1 )	
 		//  {
 
-			var numberGuesses = 15;	
+			numberGuesses = 15;	
 
-			var currentWord = optionsCurrentWord[Math.floor(Math.random()*optionsCurrentWord.length)];
+			 currentWord = optionsCurrentWord[Math.floor(Math.random()*optionsCurrentWord.length)];
 
 			currentWord = currentWord.toLowerCase();
+
+			blankCurrentWordArray_1st = new Array;
+			lettersGuessedArray = new Array;
 
 
 				for (var i=0; i<currentWord.length;i++) 
