@@ -24,3 +24,12 @@ h2 {
 	margin: 0 auto;
 	clear: both;
 }
+
+h1 {
+
+	background-color: green;
+	width: 100%;
+	max-width: 660px;
+	margin: 0 auto;
+	clear: both;
+}

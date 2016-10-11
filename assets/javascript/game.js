@@ -1,25 +1,45 @@
 
 
-	var numberGuesses = 0;
-	var lettersGuessedArray = new Array;
+	var numberGuesses = 0;						// number of guesses the player gets 
+	var lettersGuessedArray = new Array;		// empty array for the letters already guessed 
 
 	var wins = 0;
 	var optionsCurrentWord = ['Galantis','Tiesto','Martin Garrix','The Chainsmokers',
 							'Armin Van Buuren', 'Kygo', 'Van She', 'Marshmello', 
-							'Axwell Ingrosso','Syn Cole'];
-	var blankCurrentWordArray_1st = new Array;
+							'Axwell Ingrosso','Syn Cole'];  // wordbank 
 
-	var  j = 0;
+	var blankCurrentWordArray_1st = new Array;				// blank word array that will be filled with userguesses 
+
+	var  j = 0;	
 
 	var w = 0;
 
-	var sameGameCurrentWord;						// variable for current word to stay the same for one game 
+	var sameGameCurrentWord;					// variable for current word to stay the same for one game 
 
 	var duplicateChar ;                       // counter for duplicate characters
 
 	var counter = 0;
 
 // Captures Key Clicks
+
+	function duplicateChar_counter(x) 
+		{
+				counter = 0;  
+				
+				for (var b = 0; b <x.length; b++){
+
+					for (var c = b+1; c <x.length; c++)
+					{
+
+						if (x[b] === x[c] && x[b] != '') 
+						{
+							counter++;
+						}	
+					}
+				}
+				return counter;
+		}
+
 	document.onkeyup = function(event) {
 
 		// Determines which exact key was selected. Make it lowercase
@@ -33,7 +53,7 @@
 
 
 
-		if (numberGuesses == 0 ) 
+		if (numberGuesses === 0 ) 
 		{
 
 			var currentWord = optionsCurrentWord[Math.floor(Math.random()*optionsCurrentWord.length)];
@@ -43,7 +63,7 @@
 				//alert(currentWord.length);
 
 			 numberGuesses = (currentWord.length)+8;    // numberGuesses depends on the length of the word,
-			 		
+			 											// making it 8 more than the current word length 
 
 			for (var i=0; i<currentWord.length;i++) 
 			{
@@ -70,37 +90,6 @@
 		}
 
 
-		function duplicateChar_counter(x) {
-
-			counter = 0;  
-			
-			for (var b = 0; b <x.length; b++){
-
-				for (var c = b+1; c < x.length; c++)
-
-				{
-
-					// if (x[b] === x[c] && x[b] != "") 
-
-					if (x[b] === x[c] && x[b] != '') 
-
-					{
-
-						counter++;
-
-					}
-
-						
-				}
-			}
-
-			return counter;
-
-		}
-
-
-
-		
 
 		// Finding out what current word is, then setting the audio file to specific band
 
@@ -114,10 +103,7 @@
 				// audio.play();
 		 	// }
 
-			
-
-		
-
+	
 		// if (currentWord === optionsCurrentWord[0])
 
 		// 	{
@@ -147,9 +133,6 @@
 			// the loop to go through each character of the current word to see if the userGuess matched with the current word
 			
 			
-
-
-
 
 			for (var i=0; i<currentWord.length;i++) 
 				{ 	
@@ -198,6 +181,8 @@
 						 	{
 
 						 		wins++; // if user guessed the whole word, wins will be updated
+
+						 		alert("You have won the game !");
 						 		
 						 		// play song
 						 		// if (currentWord == 'Tiesto' || currentWord == 'tiesto' ||
@@ -221,7 +206,7 @@
 
 					} 
 
-				else if (currentWord.charAt(i) === " ") 
+				else if (currentWord.charAt(i) === " ") // fill blank space with blank space
 
 					{
 
