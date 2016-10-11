@@ -93,6 +93,7 @@ function gameStart() {
 						{												  	
 							wins++;
 							alert("You have won the game!");
+							gameStart();
 							
 
 						}
@@ -101,6 +102,7 @@ function gameStart() {
 											 							 
 						{												  	
 							alert("You have lost the game!");
+							gameStart();
 							
 						}
 
