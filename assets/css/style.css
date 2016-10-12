@@ -1,13 +1,54 @@
 body {
-	background: url("../images/background_theme_1.jpg");
+	background-image: url("../images/background_theme_4.jpg");
+	background-color: #cccccc;
 	font-size: 20px;
 	line-height: 34px;
-	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	color: yellow;
-	text-align: center;
+	font-family: 'Bungee Inline', cursive;
+	color: purple;
+
 }
 
-.container {
+/*.container */
+
+.col-md-12{
+	background-color: black;
+	width: 100%;
+	max-width: 660px;
+	margin: 0 auto;
+	clear: both;
+	text-align: center;
+
+}
+
+.col-md-6{
+	background-color: black;
+	width: 100%;
+	max-width: 660px;
+	margin: 0 auto;
+	clear: both;
+	text-align: center;
+
+}
+
+.col-md-3{
+	width: 100%;
+	max-width: 660px;
+	margin: 0 auto;
+	clear: both;
+	text-align: center;
+
+}
+
+
+.container-fluid-left {
+	display: inline block;
+
+
+}
+
+
+h1{
+	display: inline block;
 	background-color: black;
 	width: 100%;
 	max-width: 660px;
@@ -17,7 +58,6 @@ body {
 
 h2 {
 
-	position: absolute;
 	background-color: black;
 	width: 100%;
 	max-width: 660px;
@@ -25,11 +65,17 @@ h2 {
 	clear: both;
 }
 
-h1 {
+.background_image_1,
+.background_image_2,
+.background_image_3,
+.background_image_4,
+.background_image_5,
+.background_image_6
 
-	background-color: green;
-	width: 100%;
-	max-width: 660px;
-	margin: 0 auto;
-	clear: both;
+{
+	width:600px;
+	height: 250px;
+	margin : auto;
+	border: solid 1px;
+	
 }

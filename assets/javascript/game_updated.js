@@ -2,7 +2,7 @@
 
 						// number of guesses the player gets 
 	var lettersGuessedArray; 		// empty array for the letters already guessed 
-	var numberGuesses = 15;
+	var numberGuesses = 10;
 	var wins = 0;
 	var optionsCurrentWord = ['Galantis','Tiesto','Martin Garrix','The Chainsmokers',
 							'Armin Van Buuren', 'Kygo', 'Van She', 'Marshmello', 
@@ -15,12 +15,45 @@
 
 	var currentWord;
 
+// function playSong_Image_Display(x) {
+
+// 		 if (x === 'Galantis'){
+
+
+
+// 		 }
+// 		 else if (x === 'Tiesto'){
+		 	
+// 		 }
+// 		 else if (x === 'Martin Garrix'){
+
+// 		 	var audio = document.getElementById("martin_garrix_audio")
+// 			audio.play();
+		 	
+// 		 }
+// 		 else if (x === 'The Chainsmokers'){
+		 	
+// 		 }
+// 		 else if (x === 'Tiesto'){
+		 	
+// 		 }
+// 		 else if (x === 'Tiesto'){
+		 	
+// 		 }
+// 		 else if (x === 'Tiesto'){
+		 	
+// 		 }
+// 	}
+
+
+
+
 function gameStart() {
 
-		// if (numberGuesses === 15 || numberGuesses === 0 || wins === 1 )	
-		//  {
+			numberGuesses = 10;	
 
-			numberGuesses = 15;	
+			// Create code to randomly choose one of the ten bands (by computer), only in the
+			// beginning of the game or after the player wins or loses
 
 			 currentWord = optionsCurrentWord[Math.floor(Math.random()*optionsCurrentWord.length)];
 
@@ -29,16 +62,10 @@ function gameStart() {
 			blankCurrentWordArray_1st = new Array;
 			lettersGuessedArray = new Array;
 
-
 				for (var i=0; i<currentWord.length;i++) 
 				{
-
-					var blah = blankCurrentWordArray_1st.push("_ ");
-
+					blankCurrentWordArray_1st.push("_ ");
 				}
-
-
-		//}	
 
 	}
 	
@@ -47,29 +74,28 @@ function gameStart() {
 
 	document.onkeyup = function(event) {
 
-		// gameStart();
-
-		
 		// Determines which exact key was selected. Make it lowercase
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-		// Alerts with user guess
-		alert(userGuess);
-
-		// Create code to randomly choose one of the ten bands (Computer), only in the beginning of the game or after the player
-		// runs out of chances 
-
-		//alert ("current word is "+currentWord);
 
 			for (var i=0; i<currentWord.length;i++) 
 				{ 	
-					
+
+
 				 if (currentWord.charAt(i) === userGuess) 
 
 						{
 
-						blankCurrentWordArray_1st[i] = userGuess;
+							blankCurrentWordArray_1st[i] = userGuess;
 
+							if (blankCurrentWordArray_1st.indexOf("_ ") == -1) // Criteria for winning 
+											 							 
+							{	
+								blankCurrentWordArray_1st[i] = userGuess;									  	
+								wins++;
+								alert("You have won the game!");
+								gameStart();
+							}
 						}
 
 				else if (currentWord.charAt(i) === " ") // fill blank space with blank space
@@ -78,6 +104,7 @@ function gameStart() {
 
 					 	blankCurrentWordArray_1st[i] = " ";
 						}
+
 				}
 
 				 if (currentWord.indexOf(userGuess) == -1)  // criteria for Letters Already Guessed, if the userGuess doesn't
@@ -87,22 +114,21 @@ function gameStart() {
 											 							  //  when  same letter guessed again and Letters Already 
 						{												  // Guessed Array only gets updated once	
 							numberGuesses--;
-						 	var total = lettersGuessedArray.push(userGuess);
+						 	lettersGuessedArray.push(userGuess);
 						}
 					}
 
 
-				if (blankCurrentWordArray_1st.indexOf("_ ") == -1) // Criteria for winning 
+				// if (blankCurrentWordArray_1st.indexOf("_ ") == -1) // Criteria for winning 
 											 							 
-						{												  	
-							wins++;
-							alert("You have won the game!");
-							gameStart();
-							
+				// 		{										  	
+				// 			wins++;
+				// 			alert("You have won the game!");
+				// 			gameStart();
 
-						}
+				// 		}
 
-				if (numberGuesses === 0) // Criteria for winning 
+				if (numberGuesses === 0) // Criteria for losing 
 											 							 
 						{												  	
 							alert("You have lost the game!");
@@ -120,12 +146,15 @@ function gameStart() {
 	
 		
 
-	document.querySelector('#game').innerHTML = '<h1> TARGET Word: '  + currentWord + 
+
+		
+
+	document.querySelector('#game').innerHTML = '<h2>TARGET Word: '  + currentWord + 
 	'<br> <br> WINS: ' +  wins +
-	'<br> <br> CURRENT WORD : ' +  blankCurrentWordArray_1st.join("")   +
-	'<br> <br>NUMBER OF GUESSES REMAINING : ' +  numberGuesses +
-	'<br> <br>LETTERS ALREADY GUESSED : ' +  lettersGuessedArray +
-	'<br> <br>User guessed: ' +  userGuess + '<br>  <br></h1>';
+	'<br> <br> CURRENT WORD: ' +  blankCurrentWordArray_1st.join("")   +
+	'<br> <br>NUMBER OF GUESSES REMAINING: ' +  numberGuesses +
+	'<br> <br>LETTERS ALREADY GUESSED: ' +  lettersGuessedArray +
+	'<br> <br>USER GUESSED: ' +  userGuess + '<br>  <br></h2>';
 
 	
 }

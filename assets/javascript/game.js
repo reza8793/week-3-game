@@ -38,6 +38,19 @@
 					}
 				}
 				return counter;
+
+				// if (currentWord.indexOf(userGuess) > 0) {
+
+				// 	counter++;
+
+
+				// }
+
+				// return counter;
+
+
+
+
 		}
 
 	document.onkeyup = function(event) {
