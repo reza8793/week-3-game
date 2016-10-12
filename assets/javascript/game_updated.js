@@ -146,11 +146,17 @@ function gameStart() {
 	
 		
 
-
+	// 	document.querySelector('#game').innerHTML = '<h2>TARGET Word: '  + currentWord + 
+	// '<br> <br> WINS: ' +  wins +
+	// '<br> <br> CURRENT WORD: ' +  blankCurrentWordArray_1st.join("")   +
+	// '<br> <br>NUMBER OF GUESSES REMAINING: ' +  numberGuesses +
+	// '<br> <br>LETTERS ALREADY GUESSED: ' +  lettersGuessedArray +
+	// '<br> <br>USER GUESSED: ' +  userGuess + '<br>  <br></h2>';
 		
 
-	document.querySelector('#game').innerHTML = '<h2>TARGET Word: '  + currentWord + 
-	'<br> <br> WINS: ' +  wins +
+	document.querySelector('#game').innerHTML = 
+
+	'<h2> WINS: ' +  wins +
 	'<br> <br> CURRENT WORD: ' +  blankCurrentWordArray_1st.join("")   +
 	'<br> <br>NUMBER OF GUESSES REMAINING: ' +  numberGuesses +
 	'<br> <br>LETTERS ALREADY GUESSED: ' +  lettersGuessedArray +
