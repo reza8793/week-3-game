@@ -15,42 +15,24 @@
 
 	var currentWord;
 
-// function playSong_Image_Display(x) {
+function playSong_Image_Display(x) {
 
-// 		 if (x === 'Galantis'){
+	if (x === 'tiesto' || x === 'galantis' ||x === 'martin garrix' || x === 'kygo' || x === 'syn cole'|| x === 'the chainsmokers'  
+		||x === 'martin garrix' || x === 'marshmello' || x === 'van she' || x === 'axwell ingrosso') 
+
+	{
 
 
-
-// 		 }
-// 		 else if (x === 'Tiesto'){
+		var audio = document.getElementById("martin_garrix_audio")
+			audio.play();
+	}
 		 	
-// 		 }
-// 		 else if (x === 'Martin Garrix'){
-
-// 		 	var audio = document.getElementById("martin_garrix_audio")
-// 			audio.play();
-		 	
-// 		 }
-// 		 else if (x === 'The Chainsmokers'){
-		 	
-// 		 }
-// 		 else if (x === 'Tiesto'){
-		 	
-// 		 }
-// 		 else if (x === 'Tiesto'){
-		 	
-// 		 }
-// 		 else if (x === 'Tiesto'){
-		 	
-// 		 }
-// 	}
+}
 
 
 
 
 function gameStart() {
-
-			numberGuesses = 10;	
 
 			// Create code to randomly choose one of the ten bands (by computer), only in the
 			// beginning of the game or after the player wins or loses
@@ -58,6 +40,8 @@ function gameStart() {
 			 currentWord = optionsCurrentWord[Math.floor(Math.random()*optionsCurrentWord.length)];
 
 			currentWord = currentWord.toLowerCase();
+
+			numberGuesses = currentWord.length+5;
 
 			blankCurrentWordArray_1st = new Array;
 			lettersGuessedArray = new Array;
@@ -94,6 +78,7 @@ function gameStart() {
 								blankCurrentWordArray_1st[i] = userGuess;									  	
 								wins++;
 								alert("You have won the game!");
+								playSong_Image_Display(currentWord);
 								gameStart();
 							}
 						}
@@ -119,15 +104,6 @@ function gameStart() {
 					}
 
 
-				// if (blankCurrentWordArray_1st.indexOf("_ ") == -1) // Criteria for winning 
-											 							 
-				// 		{										  	
-				// 			wins++;
-				// 			alert("You have won the game!");
-				// 			gameStart();
-
-				// 		}
-
 				if (numberGuesses === 0) // Criteria for losing 
 											 							 
 						{												  	
@@ -135,6 +111,8 @@ function gameStart() {
 							gameStart();
 							
 						}
+
+				
 
 
 		console.log("Current Word " +currentWord);
@@ -156,11 +134,11 @@ function gameStart() {
 
 	document.querySelector('#game').innerHTML = 
 
-	'<h2> WINS: ' +  wins +
-	'<br> <br> CURRENT WORD: ' +  blankCurrentWordArray_1st.join("")   +
-	'<br> <br>NUMBER OF GUESSES REMAINING: ' +  numberGuesses +
+	'<h3> WINS: ' +  wins +
+	'<br> <br> </h3> <h3 class = "Blank_Array"> CURRENT WORD: ' +  blankCurrentWordArray_1st.join("")   +
+	'<br> <br> </h3> <h3> NUMBER OF GUESSES REMAINING: ' +  numberGuesses +
 	'<br> <br>LETTERS ALREADY GUESSED: ' +  lettersGuessedArray +
-	'<br> <br>USER GUESSED: ' +  userGuess + '<br>  <br></h2>';
+	'<br> <br>YOU GUESSED: ' +  userGuess + '<br>  <br></h3>';
 
 	
 }

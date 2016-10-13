@@ -1,10 +1,64 @@
 body {
 	background-image: url("../images/background_theme_4.jpg");
 	background-color: #cccccc;
-	font-size: 20px;
-	line-height: 34px;
 	font-family: 'Bungee Inline', cursive;
 	color: purple;
+}
+
+#gameName {
+
+	font-size: 50px;
+	line-height: 55px;
+	font-family: Oldtown,fantasy;
+	color: black;
+	background-color: rgb(51,255,109);
+	width: 100%;
+	max-width: 800px;
+	text-align: center;
+	margin-bottom: -15px;
+}
+
+#pressKey {
+
+	font-size: 45px;
+	line-height: 50px;
+	font-family: Oldtown,fantasy;
+	color: black;
+	background-color: rgb(51,255,109);
+	width: 100%;
+	max-width: 800px;
+}
+
+.Blank_Array {
+
+	/*font-family: 'Bungee Inline', cursive;
+	color: yellow;*/
+
+	font-size: 40px;
+	line-height: 40px;
+	font-family: Oldtown,fantasy;
+	color: black;
+	background-color: rgb(51,55,252);
+	width: 100%;
+	max-width: 790px;
+	padding: 10px;
+
+}
+
+
+h3 {
+
+	/*font-family: 'Bungee Inline', cursive;
+	color: yellow;*/
+
+	font-size: 40px;
+	line-height: 40px;
+	font-family: Oldtown,fantasy;
+	color: black;
+	background-color: rgb(51,255,109);
+	width: 100%;
+	max-width: 790px;
+	padding: 10px;
 
 }
 
@@ -13,29 +67,31 @@ body {
 .col-md-12{
 	background-color: black;
 	width: 100%;
-	max-width: 660px;
-	margin: 0 auto;
+	max-width: 800px;
+	margin: auto;
 	clear: both;
 	text-align: center;
+	font-family: Oldtown,fantasy;
 
 }
 
 .col-md-6{
 	background-color: black;
 	width: 100%;
-	max-width: 660px;
-	margin: 0 auto;
+	max-width: 800px;
+	/*margin-left: 60px;*/
 	clear: both;
 	text-align: center;
-
+	font-family: Oldtown,fantasy;
 }
 
 .col-md-3{
 	width: 100%;
-	max-width: 660px;
-	margin: 0 auto;
+	max-width:800px;
+	/*margin-left: 60px;*/
 	clear: both;
 	text-align: center;
+	font-family: Oldtown,fantasy;
 
 }
 
@@ -47,24 +103,6 @@ body {
 }
 
 
-h1{
-	display: inline block;
-	background-color: black;
-	width: 100%;
-	max-width: 660px;
-	margin: 0 auto;
-	clear: both;
-}
-
-h2 {
-
-	background-color: black;
-	width: 100%;
-	max-width: 660px;
-	margin: 0 auto;
-	clear: both;
-}
-
 .background_image_1,
 .background_image_2,
 .background_image_3,
@@ -73,7 +111,7 @@ h2 {
 .background_image_6
 
 {
-	width:600px;
+	width:800px;
 	height: 250px;
 	margin : auto;
 	border: solid 1px;
